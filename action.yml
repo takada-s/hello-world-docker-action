@@ -5,6 +5,10 @@ inputs:
     description: "Who to greet"
     required: true
     default: "World"
+  output-dir:
+    desription: "Output directory"
+    required: true
+    default: ${{ GITHUB_WORKSPACE }}/default-out
 outputs:
   time:
     description: "The time we greeted you"
@@ -12,5 +16,6 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
+    - ${{ inputs.output-dir }}
     - ${{ inputs.who-to-greet }}
 
