@@ -3,9 +3,12 @@ echo "CWD=$(pwd)"
 OUTDIR="$1"
 echo "OUTDIR=${OUTDIR}"
 mkdir -p $OUTDIR
-echo "file 1" > ${OUTDIR}/1.txt
-echo "file 2" > ${OUTDIR}/2.txt
-echo "file 3" > ${OUTDIR}/3.txt
+date > ${OUTDIR}/1.txt
+sleep 1
+date > ${OUTDIR}/2.txt
+sleep 1
+date > ${OUTDIR}/3.txt
+sleep 1
 
 echo "Hello $2"
 time=$(date)
